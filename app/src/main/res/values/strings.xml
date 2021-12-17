@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AlbertoExamenPMDM</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Email</string>
+    <string name="pass">Contraseña</string>
+    <string name="butaciertos">Aciertos</string>
+    <string name="butrespuestas">Respuestas</string>
+    <string name="butclean">Limpiar</string>
+    <string name="splash">EXAMEN PMDM</string>
+</resources>
