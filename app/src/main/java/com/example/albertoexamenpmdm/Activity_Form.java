@@ -35,7 +35,7 @@ public class Activity_Form extends AppCompatActivity {
         setContentView(R.layout.activity_form);
         txtemail = findViewById(R.id.txtemail);
         txtnombre = findViewById(R.id.txtnombre);
-        txtpass = findViewById(R.id.txtemail);
+        txtpass = findViewById(R.id.txtpass);
         butnext = findViewById(R.id.butnext);
         butmenu = findViewById(R.id.butmenu);
         conte = 0;
@@ -50,14 +50,19 @@ public class Activity_Form extends AppCompatActivity {
         date = new Date();
 
         butnext.setOnClickListener(v -> {
-            String nombre = txtnombre.getText().toString();
-            Intent i = new Intent(Activity_Form.this,Activity_game.class);
-            Bundle b = new Bundle();
-            b.putString("nombre", nombre);
-            i.putExtras(b);
-            startActivity(i);
-            finish();
-
+            if(txtpass.getText().toString().equals("youAreTheOne") && txtemail.getText().toString().equals("player365@thegame.com") && txtnombre.getText().toString().equals("PLAYER365")) {
+                String nombre = txtnombre.getText().toString();
+                Intent i = new Intent(Activity_Form.this, Activity_game.class);
+                Bundle b = new Bundle();
+                b.putString("nombre", nombre);
+                i.putExtras(b);
+                startActivity(i);
+                finish();
+            }
+            else
+            {
+               Toast.makeText(this,"campos vacíos o incorrectos",Toast.LENGTH_SHORT).show();
+            }
 
 
         });
