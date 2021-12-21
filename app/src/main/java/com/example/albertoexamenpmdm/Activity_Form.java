@@ -25,6 +25,9 @@ public class Activity_Form extends AppCompatActivity {
     Button butmenu;
     int contn, conte,contw;
     long conttn, contte, conttw;
+    long time[] = new long[3];
+    long time1[] = new long[3];
+    long time2[] = new long[3];
     Date date;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class Activity_Form extends AppCompatActivity {
         contte = 0;
         conttw = 0;
         conttn = 0;
+
         registerForContextMenu(butmenu);
 
         date = new Date();
@@ -72,23 +76,81 @@ public class Activity_Form extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item){
         if(item.getTitle().equals("N"))
         {
-            long date1, date2, date3;
+
             date = new Date();
             contw++;
             if(contw ==1)
             {
-                date1 = date.getTime();
+                time[0] = date.getTime();
+            }
+            else if(contw ==2)
+            {
+                if(date.getTime()>(time[0]+15)) time[1] = date.getTime();
+                else contw = 0;
+            }
+            else if(contw ==3)
+            {
+                if(date.getTime()>(time[1]+15)) time[2] = date.getTime();
+                else contw = 0;
+            }
+            if(contw == 3){
+                time[0] = 0;
+                time[1] = 0;
+                time[2] = 0;
+                txtnombre.setText("PLAYER365");
             }
 
 
         }
         else if(item.getTitle().equals("E"))
         {
+            date = new Date();
             conte++;
+            if(conte ==1)
+            {
+                time1[0] = date.getTime();
+            }
+            else if(conte ==2)
+            {
+                if(date.getTime()>(time1[0]+15)) time1[1] = date.getTime();
+                else conte = 0;
+            }
+            else if(conte ==3)
+            {
+                if(date.getTime()>(time1[1]+15)) time1[2] = date.getTime();
+                else conte = 0;
+            }
+            if(conte == 3){
+                time1[0] = 0;
+                time1[1] = 0;
+                time1[2] = 0;
+                txtemail.setText("player365@thegame.com");
+            }
         }
         else if(item.getTitle().equals("W"))
         {
-            contw++;
+            date = new Date();
+            contn++;
+            if(contn ==1)
+            {
+                time2[0] = date.getTime();
+            }
+            else if(contn ==2)
+            {
+                if(date.getTime()>(time2[0]+15)) time2[1] = date.getTime();
+                else contn = 0;
+            }
+            else if(contn ==3)
+            {
+                if(date.getTime()>(time2[1]+15)) time2[2] = date.getTime();
+                else contn = 0;
+            }
+            if(contn == 3){
+                time2[0] = 0;
+                time2[1] = 0;
+                time2[2] = 0;
+                txtpass.setText("youAreTheOne");
+            }
         }
 
 
