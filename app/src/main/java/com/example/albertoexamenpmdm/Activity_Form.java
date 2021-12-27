@@ -3,6 +3,7 @@ package com.example.albertoexamenpmdm;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,7 +51,7 @@ public class Activity_Form extends AppCompatActivity {
         date = new Date();
 
         butnext.setOnClickListener(v -> {
-            if(txtpass.getText().toString().equals("youAreTheOne") && txtemail.getText().toString().equals("player365@thegame.com") && txtnombre.getText().toString().equals("PLAYER365")) {
+          //  if(txtpass.getText().toString().equals("youAreTheOne") && txtemail.getText().toString().equals("player365@thegame.com") && txtnombre.getText().toString().equals("PLAYER365")) {
                 String nombre = txtnombre.getText().toString();
                 Intent i = new Intent(Activity_Form.this, Activity_game.class);
                 Bundle b = new Bundle();
@@ -58,13 +59,13 @@ public class Activity_Form extends AppCompatActivity {
                 i.putExtras(b);
                 startActivity(i);
                 finish();
-            }
+        /*    }
             else
             {
                Toast.makeText(this,"campos vacíos o incorrectos",Toast.LENGTH_SHORT).show();
             }
 
-
+*/
         });
     }//end onCreate
 
@@ -77,8 +78,11 @@ public class Activity_Form extends AppCompatActivity {
         menu.add(0, v.getId(),0,"W");
         menu.add(0, v.getId(),0,"S");
 
+
+
     }
     public boolean onContextItemSelected(MenuItem item){
+
         if(item.getTitle().equals("N"))
         {
 
@@ -87,6 +91,7 @@ public class Activity_Form extends AppCompatActivity {
             if(contw ==1)
             {
                 time[0] = date.getTime();
+
             }
             else if(contw ==2)
             {
@@ -159,7 +164,6 @@ public class Activity_Form extends AppCompatActivity {
         }
 
 
-
-        return true;
+        return false;
     }
 }//end Class

@@ -43,31 +43,32 @@ public class Activity_game extends AppCompatActivity {
         imgeli = findViewById(R.id.imgeli);
         imgjirafa = findViewById(R.id.imgjirafa);
         imgpiton = findViewById(R.id.imgpiton);
-//        imgleon = (ImageView) findViewById(R.id.imgleon2);
+
         final int[] cont = {0};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("INSTRUCCIONES DE USO");
         builder.setMessage("Los campos ser rellenan con una sola palabra en minúsculas y si tíldes");
         builder.setPositiveButton("OK", (dialog, which) -> {
+            handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    imgpiton.setVisibility(View.INVISIBLE);
+                    imgcebra.setVisibility(View.INVISIBLE);
+                    imgcoc.setVisibility(View.INVISIBLE);
+                    imgeli.setVisibility(View.INVISIBLE);
+                    imgjirafa.setVisibility(View.INVISIBLE);
 
+                }
+            },3500);
         });
         builder.show();
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                imgpiton.setVisibility(View.INVISIBLE);
-                imgcebra.setVisibility(View.INVISIBLE);
-                imgcoc.setVisibility(View.INVISIBLE);
-                imgeli.setVisibility(View.INVISIBLE);
-                imgjirafa.setVisibility(View.INVISIBLE);
 
-            }
-        },3000);
 
 
         butcheck.setOnClickListener(v -> {
+            cont[0] = 0;
             if((txtpiton.getText().toString()).equals("piton")) {cont[0]++;}
 
             if((txtcoc.getText().toString()).equals("cocodrilo")) cont[0]++;
@@ -87,13 +88,14 @@ public class Activity_game extends AppCompatActivity {
         });
 
         butres.setOnClickListener(v -> {
-            txtpiton.setText("piton");
-            txtcebra.setText("cebra");
-            txtjirafa.setText("jirafa");
-            txtcoc.setText("cocodrilo");
-            txteli.setText("elefante");
-            txtleon.setText("leon");
-
+            if(cont[0]>3) {
+                txtpiton.setHint("piton");
+                txtcebra.setHint("cebra");
+                txtjirafa.setHint("jirafa");
+                txtcoc.setHint("cocodrilo");
+                txteli.setHint("elefante");
+                txtleon.setHint("leon");
+            }
 
         });
 
@@ -105,6 +107,12 @@ public class Activity_game extends AppCompatActivity {
             txteli.setText("");
             txtleon.setText("");
             txtcont.setText("");
+            txtpiton.setHint("");
+            txtcebra.setHint("");
+            txtjirafa.setHint("");
+            txtcoc.setHint("");
+            txteli.setHint("");
+            txtleon.setHint("");
             cont[0] = 0;
 
         });
