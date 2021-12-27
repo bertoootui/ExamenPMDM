@@ -2,31 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/imgleon2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#636363">
 
     <ImageView
-        android:id="@+id/imgleon2"
-        android:layout_width="122dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/leon"
-        android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/imgeli"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgjirafa" />
-
-    <ImageView
         android:id="@+id/imgpiton"
         android:layout_width="122dp"
         android:layout_height="107dp"
-        android:layout_marginStart="132dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/piton"
-        app:layout_constraintStart_toEndOf="@+id/imgjirafa"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgcoc" />
 
     <ImageView
@@ -34,7 +21,7 @@
         android:layout_width="122dp"
         android:layout_height="107dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/cocodrilos"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +31,7 @@
         android:id="@+id/imgeli"
         android:layout_width="122dp"
         android:layout_height="107dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/elefante"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,15 +54,16 @@
         android:id="@+id/imgjirafa"
         android:layout_width="122dp"
         android:layout_height="107dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/girafa"
         android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@+id/imgcebra"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgcebra" />
 
     <EditText
         android:id="@+id/txtcebra"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,31 +71,31 @@
 
     <EditText
         android:id="@+id/txteli"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
-        android:layout_marginStart="140dp"
-        app:layout_constraintStart_toEndOf="@+id/txtleon"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgeli" />
 
     <EditText
         android:id="@+id/txtleon"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgleon2" />
+        app:layout_constraintTop_toBottomOf="@+id/imglion" />
 
     <EditText
         android:id="@+id/txtpiton"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
-        android:layout_marginStart="136dp"
-        app:layout_constraintStart_toEndOf="@+id/txtjirafa"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgpiton" />
 
     <EditText
         android:id="@+id/txtjirafa"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,10 +103,10 @@
 
     <EditText
         android:id="@+id/txtcoc"
-        android:layout_width="119dp"
+        android:layout_width="122dp"
         android:layout_height="50dp"
-        android:layout_marginStart="140dp"
-        app:layout_constraintStart_toEndOf="@+id/txtcebra"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgcoc" />
 
     <Button
@@ -165,4 +153,14 @@
         app:layout_constraintEnd_toStartOf="@+id/imgpiton"
         app:layout_constraintStart_toEndOf="@+id/imgjirafa"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imglion"
+        android:layout_width="122dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgjirafa"
+        app:srcCompat="@drawable/leon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

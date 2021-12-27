@@ -43,6 +43,7 @@ public class Activity_game extends AppCompatActivity {
         imgeli = findViewById(R.id.imgeli);
         imgjirafa = findViewById(R.id.imgjirafa);
         imgpiton = findViewById(R.id.imgpiton);
+        imgleon = findViewById(R.id.imglion);
 
         final int[] cont = {0};
 
@@ -59,6 +60,7 @@ public class Activity_game extends AppCompatActivity {
                     imgcoc.setVisibility(View.INVISIBLE);
                     imgeli.setVisibility(View.INVISIBLE);
                     imgjirafa.setVisibility(View.INVISIBLE);
+                    imgleon.setVisibility(View.INVISIBLE);
 
                 }
             },3500);
