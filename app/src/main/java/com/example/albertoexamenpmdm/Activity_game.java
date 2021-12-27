@@ -48,7 +48,7 @@ public class Activity_game extends AppCompatActivity {
         final int[] cont = {0};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("INSTRUCCIONES DE USO");
+        builder.setTitle("TOCA MEMORIZAR");
         builder.setMessage("Los campos ser rellenan con una sola palabra en minúsculas y si tíldes");
         builder.setPositiveButton("OK", (dialog, which) -> {
             handler = new Handler();

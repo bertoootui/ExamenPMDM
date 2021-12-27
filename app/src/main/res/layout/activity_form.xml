@@ -103,10 +103,20 @@
         android:id="@+id/butmenu"
         android:layout_width="32dp"
         android:layout_height="29dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/butinfo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/ic_dialog_alert"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

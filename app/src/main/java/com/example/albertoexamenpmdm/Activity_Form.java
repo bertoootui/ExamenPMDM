@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -26,7 +27,7 @@ import java.util.TimerTask;
 public class Activity_Form extends AppCompatActivity {
     EditText txtnombre, txtemail, txtpass;
     FloatingActionButton butnext;
-    Button butmenu;
+    Button butmenu, butinfo;
     int contn, conte,contw;
     long conttn, contte, conttw;
     long time[] = new long[3];
@@ -45,6 +46,7 @@ public class Activity_Form extends AppCompatActivity {
         txtpass = findViewById(R.id.txtpass);
         butnext = findViewById(R.id.butnext);
         butmenu = findViewById(R.id.butmenu);
+        butinfo = findViewById(R.id.butinfo);
         conte = 0;
         contn = 0;
         contw = 0;
@@ -57,8 +59,26 @@ public class Activity_Form extends AppCompatActivity {
 
         date = new Date();
 
+        butinfo.setOnClickListener(view -> {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("BIENVENIDO");
+            builder.setMessage("Alguien antes ha dicho que el morado es una buena forma de empezar");
+            builder.setPositiveButton("OK", (dialog, which) -> {});
+            builder.show();
+
+        });
+        butmenu.setOnClickListener(view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("OH");
+            builder.setMessage("vas por buen camino, pero te falta tiempo");
+            builder.setPositiveButton("OK", (dialog, which) -> {});
+            builder.show();
+
+        });
+
         butnext.setOnClickListener(v -> {
-          //  if(txtpass.getText().toString().equals("youAreTheOne") && txtemail.getText().toString().equals("player365@thegame.com") && txtnombre.getText().toString().equals("PLAYER365")) {
+           if(txtpass.getText().toString().equals("youAreTheOne") && txtemail.getText().toString().equals("player365@thegame.com") && txtnombre.getText().toString().equals("PLAYER365")) {
                 String nombre = txtnombre.getText().toString();
                 Intent i = new Intent(Activity_Form.this, Activity_game.class);
                 Bundle b = new Bundle();
@@ -66,13 +86,13 @@ public class Activity_Form extends AppCompatActivity {
                 i.putExtras(b);
                 startActivity(i);
                 finish();
-        /*    }
+            }
             else
             {
                Toast.makeText(this,"campos vacíos o incorrectos",Toast.LENGTH_SHORT).show();
             }
 
-*/
+
         });
     }//end onCreate
 
@@ -176,6 +196,14 @@ public class Activity_Form extends AppCompatActivity {
 
 
             }
+        } else if(item.getTitle().equals("S"))
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("SHOW IT");
+            builder.setMessage("Deberás encontrar los datos correctos para rellenar los campos." +
+                    "\nPISTA: LA REPETICIÓN NO ES UN MAL MÉTODO");
+            builder.setPositiveButton("OK", (dialog, which) -> {});
+            builder.show();
         }
             if(txtnombre.getText().toString().equals("PLAYER365") && txtemail.getText().toString().equals("player365@thegame.com") && txtpass.getText().toString().equals("youAreTheOne")){
                 butnext.setBackgroundTintList(getColorStateList(R.color.purple_200));

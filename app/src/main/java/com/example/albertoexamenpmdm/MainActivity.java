@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
 
-                    sleep(5*100);
+                    sleep(15*100);
 
 
                     Intent i = new Intent(MainActivity.this, Activity_Form.class);
